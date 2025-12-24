@@ -1,0 +1,615 @@
+:root {
+    --primary-pink: #F4C2C2;
+    --primary-cream: #FFFAF0;
+    /* Floral White / Cream */
+    --accent-gold: #D4AF37;
+    --text-mocha: #4B3621;
+    /* Café Noir */
+    --text-dark: #2C2C2C;
+    --white: #FFFFFF;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --radius-lg: 15px;
+    --radius-circle: 50%;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--primary-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    color: var(--text-mocha);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-pink);
+    color: var(--text-mocha);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 2px solid var(--primary-pink);
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-pink);
+    /* Make text pink on hover? Or maybe darker pink bg. Let's try transparent with border. */
+    border-color: var(--text-mocha);
+    /* Contrast */
+    color: var(--text-mocha);
+}
+
+.btn-primary-small {
+    background-color: var(--primary-pink);
+    color: var(--text-mocha);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    border: 2px solid var(--white);
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--text-mocha);
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    background: transparent;
+    /* Transparent as requested */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-mocha);
+    /* Might need white if hero is dark. Let's check hero. */
+}
+
+/* Hero text contrast fix */
+.hero .logo-text {
+    color: var(--text-mocha);
+    /* Depending on the image */
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-mocha);
+}
+
+/* Hero Section */
+.hero {
+    height: 85vh;
+    /* adjust as needed */
+    background: url('assets/images/hero_cake_marble.png') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Overlay for text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    /* Slight darken */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    max-width: 900px;
+    /* Ensure wide enough for big text */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: var(--white);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* New Brand Title */
+.brand-main-title {
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 0px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    line-height: 1.1;
+    font-family: var(--font-heading);
+}
+
+/* Adjusted Slogan */
+.hero-slogan {
+    font-size: 2.5rem;
+    /* Slightly smaller than brand */
+    margin-bottom: 20px;
+    color: var(--primary-pink);
+    /* Make it pop or keep white? Let's keep white for elegance but maybe lighter weight */
+    color: var(--white);
+    font-weight: 400;
+    /* Lighter weight for contrast with bold brand */
+    font-style: italic;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Candy/Gummy Style Slogan */
+.candy-text {
+    font-family: 'Chewy', cursive;
+    font-size: 3rem;
+    color: #ff8fa3;
+    margin-bottom: 20px;
+
+    /* Gummy Volume Effect */
+    text-shadow:
+        2px 2px 0px rgba(255, 255, 255, 0.4),
+        -1px -1px 0px rgba(0, 0, 0, 0.1),
+        3px 3px 5px rgba(0, 0, 0, 0.2);
+
+    letter-spacing: 1px;
+    transform: rotate(-2deg);
+    display: inline-block;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+/* Categories */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.category-item {
+    transition: transform 0.3s ease;
+}
+
+.category-item:hover {
+    transform: translateY(-10px);
+}
+
+.icon-circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--primary-pink);
+}
+
+.icon-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-item h3 {
+    font-size: 1.2rem;
+    color: var(--text-mocha);
+}
+
+/* Personalization */
+.personalization {
+    background-color: #fff;
+    /* Clean white background */
+    border-radius: 30px;
+    /* Slight structure change for variety */
+    margin: 0 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: -30px auto 40px;
+    color: #666;
+}
+
+.custom-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--primary-cream);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid #eee;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-mocha);
+}
+
+select,
+textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    outline: none;
+    background: #fff;
+}
+
+select:focus,
+textarea:focus {
+    border-color: var(--primary-pink);
+}
+
+textarea {
+    resize: none;
+    margin-bottom: 20px;
+}
+
+.custom-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+/* Gallery - Instagram Style */
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.instagram-link {
+    color: var(--primary-pink);
+    font-weight: 700;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.gallery-img:hover {
+    filter: brightness(90%);
+}
+
+/* Specialties Section */
+.specialty-description {
+    text-align: center;
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: -30px auto 50px;
+    font-family: var(--font-heading);
+    color: var(--text-mocha);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.specialty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.specialty-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
+    background: #fff;
+    padding: 10px;
+    /* Polaroid style frame */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.specialty-card:hover {
+    transform: translateY(-10px) rotate(1deg);
+}
+
+.specialty-card img {
+    width: 100%;
+    height: 350px;
+    /* Taller for portrait shots */
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--text-mocha);
+    color: var(--primary-cream);
+    padding: 80px 0 20px;
+    margin-top: 50px;
+    border-top-left-radius: 50px;
+    /* Stylish top curve */
+    border-top-right-radius: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-col h3 {
+    color: var(--primary-pink);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-col h4 {
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a:hover {
+    color: var(--primary-pink);
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.newsletter {
+    display: flex;
+    margin-top: 15px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    outline: none;
+    flex: 1;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--primary-pink);
+    color: var(--text-mocha);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links a {
+    margin-left: 20px;
+}
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero .brand-main-title {
+        font-size: 3rem;
+        letter-spacing: 4px;
+    }
+
+    .hero .hero-slogan {
+        font-size: 1.8rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .newsletter {
+        justify-content: center;
+    }
+}
+
+/* Custom Toast Notification */
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: var(--text-mocha);
+    color: var(--primary-cream);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.5s;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-icon {
+    color: var(--primary-pink);
+    font-size: 1.2rem;
+}

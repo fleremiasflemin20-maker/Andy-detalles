@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Andy Detalles | Postres hechos con amor</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&amp;family=Noto+Sans:wght@400;500;700&amp;family=Chewy&amp;family=Kaushan+Script&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom Styles / Overrides -->
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4c3c3",
+                        "primary-dark": "#e0a5a5",
+                        "secondary": "#935353",
+                        "accent": "#d4b0b0",
+                        "background-light": "#fbf8f8",
+                        "background-dark": "#201212",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2c1a1a",
+                        "text-main": "#4a2c2c",
+                        "text-light": "#785a5a"
+                    },
+                    fontFamily: {
+                        "display": ["Epilogue", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"],
+                        "candy": ["Chewy", "cursive"],
+                        "script": ["Kaushan Script", "cursive"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.9375rem", // 15px
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #fbf8f8;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #e0a5a5;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4b0b0;
+        }
+
+        .glass-nav {
+            background: rgba(251, 248, 248, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        /* Candy Text Effect Ported */
+        .candy-text {
+            font-family: 'Chewy', cursive;
+            color: #ff8fa3;
+            text-shadow:
+                2px 2px 0px rgba(255, 255, 255, 0.4),
+                -1px -1px 0px rgba(0, 0, 0, 0.1),
+                3px 3px 5px rgba(0, 0, 0, 0.2);
+            /* Rotation handled in utility class */
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-text-main font-display antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+    <!-- Top Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav border-b border-[#f2e8e8] transition-all duration-300">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="text-primary p-2 bg-white rounded-full shadow-sm">
+                        <span class="material-symbols-outlined text-3xl">bakery_dining</span>
+                    </div>
+                    <!-- Updated Logo: Script Font + Italic -->
+                    <h2 class="text-[#4a2c2c] text-3xl font-script font-bold italic tracking-wide">Andy Detalles</h2>
+                </div>
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-[#4a2c2c] hover:text-primary transition-colors text-sm font-medium" href="#menu">Menú
+                        Dulce</a>
+                    <a class="text-[#4a2c2c] hover:text-primary transition-colors text-sm font-medium"
+                        href="#orders">Pedidos</a>
+                    <a class="text-[#4a2c2c] hover:text-primary transition-colors text-sm font-medium"
+                        href="#specials">Especiales</a>
+                    <a class="text-[#4a2c2c] hover:text-primary transition-colors text-sm font-medium"
+                        href="#contact">Contacto</a>
+                </nav>
+                <!-- CTA -->
+                <div class="flex items-center gap-4">
+                    <a href="#orders"
+                        class="hidden sm:flex bg-primary hover:bg-primary-dark transition-colors text-[#4a2c2c] px-6 py-2.5 rounded-xl text-sm font-bold shadow-sm hover:shadow-md">
+                        Order Now
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 text-[#4a2c2c]">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pt-20">
+        <!-- Hero Section -->
+        <section
+            class="relative w-full h-[600px] lg:h-[700px] flex items-center justify-center overflow-hidden text-center">
+            <!-- Using our Hero Image -->
+            <div class="absolute inset-0 z-0 bg-cover bg-center"
+                data-alt="Close up of a delicious strawberry cream cake on a marble table with cookies"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("assets/images/hero_cake_marble.png");'>
+            </div>
+            <div class="relative z-10 container mx-auto px-4 text-center">
+                <div
+                    class="max-w-4xl mx-auto backdrop-blur-sm bg-white/10 p-8 rounded-2xl border border-white/20 shadow-xl">
+                    <span
+                        class="inline-block px-4 py-1.5 mb-4 text-xs font-bold tracking-wider text-white uppercase bg-black/20 rounded-full backdrop-blur-md border border-white/10">
+                        Artisanal &amp; Fresh
+                    </span>
+                    <!-- Updated Main Title: Script Font + Italic + Rotation -->
+                    <h1
+                        class="text-white text-7xl md:text-8xl lg:text-9xl font-script font-bold italic -rotate-3 leading-tight tracking-wide mb-4 drop-shadow-lg transform origin-center">
+                        Andy Detalles
+                    </h1>
+
+                    <!-- Candy Slogan -->
+                    <h2 class="candy-text text-5xl md:text-6xl mb-6 -rotate-2">con un dulc3</h2>
+
+                    <!-- Bio -->
+                    <div
+                        class="text-white/95 text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto drop-shadow-md space-y-2">
+                        <p class="font-bold text-2xl">Repostera Latina de Tierra Morena 🇲🇽✨</p>
+                        <p>Mexican Food 🌮🥗 • Desserts 🎂🍩 • Candy 🎁</p>
+                        <p class="italic">¡México te llevo en el corazón!</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#menu"
+                            class="bg-primary hover:bg-primary-dark text-[#4a2c2c] h-12 px-8 rounded-xl font-bold text-base transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center">
+                            Ver Menú
+                        </a>
+                        <a href="#contact"
+                            class="bg-white hover:bg-gray-50 text-[#4a2c2c] h-12 px-8 rounded-xl font-bold text-base transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center">
+                            Contacto
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Categories (Chips) -->
+        <section class="py-12 bg-background-light" id="menu">
+            <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8">
+                    <h3 class="text-text-main text-2xl font-bold mb-2">Nuestras Delicias</h3>
+                    <p class="text-text-light text-sm">Elige entre nuestra selección de creaciones artesanales</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <!-- Category Item -->
+                    <a class="group flex flex-col items-center gap-3 min-w-[100px] transition-transform hover:scale-105"
+                        href="#">
+                        <div
+                            class="w-20 h-20 rounded-full bg-white border border-[#f2e8e8] shadow-sm flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300 overflow-hidden p-2">
+                            <img src="assets/images/icon_pasteles.png" class="object-contain w-full h-full"
+                                alt="Pasteles">
+                        </div>
+                        <span
+                            class="text-[#4a2c2c] font-medium text-sm group-hover:text-primary-dark transition-colors">Pasteles</span>
+                    </a>
+                    <!-- Category Item -->
+                    <a class="group flex flex-col items-center gap-3 min-w-[100px] transition-transform hover:scale-105"
+                        href="#">
+                        <div
+                            class="w-20 h-20 rounded-full bg-white border border-[#f2e8e8] shadow-sm flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300 overflow-hidden p-2">
+                            <img src="assets/images/icon_desayunos.png" class="object-contain w-full h-full"
+                                alt="Desayunos">
+                        </div>
+                        <span
+                            class="text-[#4a2c2c] font-medium text-sm group-hover:text-primary-dark transition-colors">Desayunos</span>
+                    </a>
+                    <!-- Category Item -->
+                    <a class="group flex flex-col items-center gap-3 min-w-[100px] transition-transform hover:scale-105"
+                        href="#">
+                        <div
+                            class="w-20 h-20 rounded-full bg-white border border-[#f2e8e8] shadow-sm flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300 overflow-hidden p-2">
+                            <img src="assets/images/icon_regalos.png" class="object-contain w-full h-full"
+                                alt="Regalos">
+                        </div>
+                        <span
+                            class="text-[#4a2c2c] font-medium text-sm group-hover:text-primary-dark transition-colors">Regalos</span>
+                    </a>
+                    <!-- Category Item -->
+                    <a class="group flex flex-col items-center gap-3 min-w-[100px] transition-transform hover:scale-105"
+                        href="#">
+                        <div
+                            class="w-20 h-20 rounded-full bg-white border border-[#f2e8e8] shadow-sm flex items-center justify-center group-hover:bg-primary group-hover:border-primary transition-colors duration-300 overflow-hidden p-2">
+                            <img src="assets/images/gallery_cookies.png" class="object-contain w-full h-full"
+                                alt="Galletas">
+                        </div>
+                        <span
+                            class="text-[#4a2c2c] font-medium text-sm group-hover:text-primary-dark transition-colors">Galletas</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Specialties Section (User Images) -->
+        <section class="py-16 md:py-24 bg-white" id="specials">
+            <div class="max-w-[1400px] mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#4a2c2c] mb-2">Hecho en Casa con Amor</h2>
+                    <p class="text-text-light text-lg italic font-display">Postres deliciosos artesanales hechos 100 por
+                        ciento en casa.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- New Item 1 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/cake_peach_raspberry.jpg" alt="Pastel de frutas"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Pastel Frutal Fresco</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Suave bizcocho decorado con generosas
+                                capas de duraznos frescos, frambuesas y láminas de almendra tostada.</p>
+                        </div>
+                    </div>
+
+                    <!-- New Item 2 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/flan_caramel_strawberry.jpg" alt="Flan Napolitano"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Flan con Fresas</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Cremoso flan napolitano bañado en
+                                caramelo artesanal, coronado con una fresa fresca, nuez y un toque crujiente.</p>
+                        </div>
+                    </div>
+
+                    <!-- New Item 3 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/apple_choco_drizzle.jpg" alt="Manzana Chocolate"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Manzana Gourmet</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Manzana fresca cubierta de chocolate
+                                semiamargo de alta calidad con un delicado diseño en chocolate blanco.</p>
+                        </div>
+                    </div>
+
+                    <!-- New Item 4 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/apple_spicy_chamoy.png" alt="Manzana con Chamoy"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Manzana Enchilada</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Una explosión de sabor: manzana cubierta
+                                con una capa perfecta de chamoy y chilito en polvo. ¡Dulce y picosito!</p>
+                        </div>
+                    </div>
+
+                    <!-- New Item 5 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/dessert_tray_choco_nut.jpg" alt="Postre de Nuez"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Delicia de Nuez</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Postre cremoso para compartir, con
+                                abundantes líneas de chocolate y trocitos de nuez esparcidos por doquier.</p>
+                        </div>
+                    </div>
+
+                    <!-- Existing Item 1 (Placeholder content updated) -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/user_creation_1.png" alt="Especialidad de la casa"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Pastel de Celebración</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Nuestra especialidad para tus eventos,
+                                decorado con el estilo único que nos caracteriza y un sabor inolvidable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Existing Item 2 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/user_creation_2.png" alt="Alfajores Artesanales"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Alfajores Clásicos</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Suaves galletas tipo sándwich rellenas de
+                                dulce de leche y espolvoreadas con azúcar glass o coco.</p>
+                        </div>
+                    </div>
+
+                    <!-- Existing Item 3 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/user_creation_3.png" alt="Delicias Horneadas"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Galletas Finas</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Surtido de galletas de mantequilla
+                                horneadas a la perfección, ideales para acompañar tu café o regalar.</p>
+                        </div>
+                    </div>
+
+                    <!-- Existing Item 4 -->
+                    <div
+                        class="group relative overflow-hidden rounded-2xl shadow-lg border border-[#f2e8e8] bg-white transition-all hover:shadow-xl">
+                        <div class="aspect-square overflow-hidden">
+                            <img src="assets/images/user_creation_4.png" alt="Postres Caseros"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        </div>
+                        <div class="p-6 text-center">
+                            <h4 class="font-bold text-[#4a2c2c] text-2xl font-script mb-2">Cupcakes Temáticos</h4>
+                            <p class="text-sm text-text-light leading-relaxed">Pequeños pasteles individuales con
+                                decoraciones creativas y frosting cremoso según la temporada.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalization Tool Section -->
+        <section class="py-16 md:py-24 bg-background-light relative overflow-hidden" id="orders">
+            <!-- Decorative blobs -->
+            <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none">
+            </div>
+            <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-[#f2e8e8]">
+                            <h2 class="text-3xl md:text-4xl font-bold text-[#4a2c2c] mb-2">Personaliza tu pedido</h2>
+                            <p class="text-text-light mb-8">Diseña el regalo perfecto o tu postre ideal. Cuéntanos tu
+                                idea.</p>
+
+                            <form class="space-y-6 custom-form">
+                                <div class="space-y-4">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div class="space-y-2">
+                                            <label class="text-sm font-bold text-[#4a2c2c] ml-1">Ocasión</label>
+                                            <div class="relative">
+                                                <select id="occasion"
+                                                    class="w-full bg-white border-none ring-1 ring-[#e5d1d1] text-[#4a2c2c] rounded-xl py-3 pl-4 pr-10 focus:ring-2 focus:ring-primary focus:outline-none appearance-none">
+                                                    <option value="" disabled selected>Selecciona una ocasión</option>
+                                                    <option value="birthday">Cumpleaños</option>
+                                                    <option value="wedding">Boda</option>
+                                                    <option value="anniversary">Aniversario</option>
+                                                    <option value="other">Otro</option>
+                                                </select>
+                                                <span
+                                                    class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-text-light">keyboard_arrow_down</span>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-sm font-bold text-[#4a2c2c] ml-1">Sabor Favorito</label>
+                                            <div class="relative">
+                                                <select id="flavor"
+                                                    class="w-full bg-white border-none ring-1 ring-[#e5d1d1] text-[#4a2c2c] rounded-xl py-3 pl-4 pr-10 focus:ring-2 focus:ring-primary focus:outline-none appearance-none">
+                                                    <option value="" disabled selected>Selecciona sabor</option>
+                                                    <option value="vanilla">Vainilla Clásica</option>
+                                                    <option value="chocolate">Chocolate Belga</option>
+                                                    <option value="strawberry">Fresa y Crema</option>
+                                                    <option value="redvelvet">Red Velvet</option>
+                                                </select>
+                                                <span
+                                                    class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-text-light">keyboard_arrow_down</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-sm font-bold text-[#4a2c2c] ml-1">Tu Visión</label>
+                                        <textarea id="vision"
+                                            class="w-full bg-white border-none ring-1 ring-[#e5d1d1] text-[#4a2c2c] rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary focus:outline-none min-h-[100px] resize-none"
+                                            placeholder="Describe tu idea: colores, temáticas, mensaje especial..."></textarea>
+                                    </div>
+                                </div>
+                                <button
+                                    class="w-full bg-primary hover:bg-primary-dark text-[#4a2c2c] py-4 rounded-xl font-bold text-lg shadow-md transition-all transform hover:-translate-y-1 mt-4"
+                                    type="submit">
+                                    Cotizar Ahora &rarr;
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Right Image Grid -->
+                    <div class="order-1 lg:order-2 relative h-full min-h-[400px]">
+                        <div class="grid grid-cols-2 gap-4 h-full">
+                            <div class="space-y-4 pt-8">
+                                <div class="rounded-2xl overflow-hidden aspect-[3/4]">
+                                    <img alt="Elegant cake"
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                        src="assets/images/user_creation_2.png" />
+                                </div>
+                                <div
+                                    class="bg-primary/20 rounded-2xl p-6 flex flex-col justify-center items-center text-center">
+                                    <span class="material-symbols-outlined text-4xl text-[#4a2c2c] mb-2">stars</span>
+                                    <h4 class="font-bold text-[#4a2c2c]">Calidad Premium</h4>
+                                    <p class="text-xs text-text-light mt-1">Ingredientes selectos</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div
+                                    class="bg-[#f2e8e8] rounded-2xl p-6 flex flex-col justify-center items-center text-center">
+                                    <span
+                                        class="material-symbols-outlined text-4xl text-[#4a2c2c] mb-2">local_shipping</span>
+                                    <h4 class="font-bold text-[#4a2c2c]">Entregas</h4>
+                                    <p class="text-xs text-text-light mt-1">Seguro y a tiempo</p>
+                                </div>
+                                <div class="rounded-2xl overflow-hidden aspect-[3/4]">
+                                    <img alt="Cupcakes"
+                                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                        src="assets/images/user_creation_4.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-16 md:py-24 bg-background-light" id="gallery">
+            <div class="max-w-[1400px] mx-auto px-4">
+                <div class="flex items-end justify-between mb-10 px-4">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#4a2c2c] mb-2">Síguenos en Instagram</h2>
+                        <a href="https://www.instagram.com/andydetallesconundulc3/" target="_blank"
+                            class="text-primary-dark font-medium hover:underline text-xl block">@andydetallesconundulc3</a>
+                    </div>
+                    <a class="hidden sm:flex items-center gap-1 text-[#4a2c2c] font-bold hover:text-primary transition-colors"
+                        href="https://www.instagram.com/andydetallesconundulc3/" target="_blank">
+                        View all <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                    <!-- Gallery Item 1 -->
+                    <a href="https://www.instagram.com/andydetallesconundulc3/" target="_blank"
+                        class="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Instagram 1"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="assets/images/insta_1.png" />
+                        <div
+                            class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl drop-shadow-lg">favorite</span>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 2 -->
+                    <a href="https://www.instagram.com/andydetallesconundulc3/" target="_blank"
+                        class="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Instagram 2"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="assets/images/insta_2.png" />
+                        <div
+                            class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl drop-shadow-lg">favorite</span>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 3 -->
+                    <a href="https://www.instagram.com/andydetallesconundulc3/" target="_blank"
+                        class="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Instagram 3"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="assets/images/insta_3.jpg" />
+                        <div
+                            class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl drop-shadow-lg">favorite</span>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 4 -->
+                    <a href="https://www.instagram.com/andydetallesconundulc3/" target="_blank"
+                        class="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Instagram 4"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="assets/images/insta_4.png" />
+                        <div
+                            class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl drop-shadow-lg">favorite</span>
+                        </div>
+                    </a>
+                    <!-- Gallery Item 5 -->
+                    <a href="https://www.instagram.com/andydetallesconundulc3/" target="_blank"
+                        class="group relative aspect-square overflow-hidden rounded-xl cursor-pointer">
+                        <img alt="Instagram 5"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="assets/images/insta_5.png" />
+                        <div
+                            class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl drop-shadow-lg">favorite</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#2c1a1a] text-[#fbf8f8] py-16 rounded-t-[2.5rem] mt-8" id="contact">
+        <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <!-- Brand -->
+                <div class="md:col-span-1 space-y-4">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="material-symbols-outlined text-primary text-3xl">bakery_dining</span>
+                        <h3 class="text-xl font-bold tracking-tight text-white">Andy Detalles</h3>
+                    </div>
+                    <p class="text-white/70 text-sm leading-relaxed">
+                        Creando momentos dulces e inolvidables. Hecho a mano, con el corazón y el mejor sabor.
+                    </p>
+                </div>
+                <!-- Links 1 -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold mb-4">Menú</h4>
+                    <ul class="space-y-3 text-sm text-white/70">
+                        <li><a class="hover:text-primary transition-colors" href="#menu">Pasteles</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#menu">Cookies</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#menu">Regalos</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#specials">Especiales</a></li>
+                    </ul>
+                </div>
+                <!-- Links 2 -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold mb-4">Empresa</h4>
+                    <ul class="space-y-3 text-sm text-white/70">
+                        <li><a class="hover:text-primary transition-colors" href="#">Nosotros</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#contact">Contacto</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h4 class="text-white font-bold mb-4">Visítanos</h4>
+                    <ul class="space-y-4 text-sm text-white/70">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary mt-0.5">location_on</span>
+                            <span>4040 Coco Ave #14<br />Los Angeles, CA 90008</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">call</span>
+                            <span>+1 (424) 205-8039</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">mail</span>
+                            <span>andydetalles_@hotmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-16 pt-8 text-center text-xs text-white/50">
+                <p>© 2023 Andy Detalles. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Floating Action Button -->
+    <a class="fixed bottom-8 right-8 z-50 bg-[#25D366] hover:bg-[#20bd5a] text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 cursor-pointer"
+        href="https://wa.me/14242058039" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+            style="width: 30px; height: 30px;">
+    </a>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</body>
+
+</html>
