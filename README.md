@@ -2,6 +2,10 @@
 
 Bienvenido al repositorio oficial de **Andy Detalles**. Este es un sitio web moderno y responsive diseñado para una tienda de repostería y regalos personalizados.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/aac820ef-0025-46d0-9400-9ee2dc712a14" width="90%" alt="Vista previa de Andy Detalles" />
+</p>
+
 ## Características Principales ✨
 
 *   **Diseño Premium**: Interfaz limpia y elegante con animaciones suaves.
